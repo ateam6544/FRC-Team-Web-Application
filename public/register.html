@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://getbootstrap.com/docs/4.0/examples/sign-in/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="FRC Teams Web Management" content="">
+    <meta name="Adam Tronchin" content="">
+    <!-- <link rel="icon" href="https://getbootstrap.com/favicon.ico"> -->
+    <link rel="icon" href="images/FIRSTRegionalVert_Canada.png">
+    <title>Signin FRC Teams App</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center" style="background-color: black;">
+      <form class="form">
+            <img src="images/FIRSTRegionalVert_CanadaReverse.gif"alt="FRC Canada Logo" height="200" width="200" style="padding:15px;">
+            <h3 style="color:white;">Register</h3>
+            <div style="margin:15px;" class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="student">
+                    <label style="color:white;" class="form-check-label" for="inlineRadio1">Student</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="mentor">
+                    <label style="color:white;" class="form-check-label" for="inlineRadio2">Mentor</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="parent">
+                    <label style="color:white;" class="form-check-label" for="inlineRadio3">Parent</label>
+                  </div>
+                <div class="form-group">
+                    <label style="color:white;" for="exampleFormControlSelect1">Team</label>
+                    <select class="form-control" id="teamSelect"></select>
+                </div>
+                <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                      </div>
+                      <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                  <a href="register.html"><button class="btn btn-lg btn-danger btn-block" type="submit">Register</button></a>
+      </form>
+</body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB5_vLQQtNq0SWpuMhcmvG8BkyIjR-W5i8",
+    authDomain: "frcteamsapp.firebaseapp.com",
+    databaseURL: "https://frcteamsapp.firebaseio.com",
+    projectId: "frcteamsapp",
+    storageBucket: "frcteamsapp.appspot.com",
+    messagingSenderId: "1023019316529"
+  };
+  firebase.initializeApp(config);
+
+  var myobject = {
+    6544 : '6544',
+    865 : '865',
+    772 : '772'
+};
+
+var select = document.getElementById("teamSelect");
+for(index in myobject) {
+    select.options[select.options.length] = new Option(myobject[index], index);
+}
+</script>
